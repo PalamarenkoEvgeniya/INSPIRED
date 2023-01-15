@@ -58,6 +58,18 @@ fieldset {
   transform: scale(0);
 }
 
+.main {
+  margin-bottom: 120px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 540px) {
+    margin-bottom: 60px;
+  }
+}
+
 .container {
   --max-width: 1180px;
   --padding: 30px;
