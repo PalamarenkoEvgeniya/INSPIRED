@@ -1,6 +1,6 @@
 .product {
   &__link {
-    transition: color .3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     &:hover {
       color: gray;
@@ -8,12 +8,27 @@
   }
   &__image {
     margin-bottom: 16px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 540px) {
+      margin-bottom: 60px;
+    }
   }
+
   &__title {
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 13px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 5px;
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 
   &__row {
@@ -21,11 +36,20 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 3px;
+    }
   }
 
   &__price {
     font-size: 14px;
     line-height: 17px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 
   &__btn-favorite {

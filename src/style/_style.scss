@@ -61,6 +61,10 @@ fieldset {
 .main {
   margin-bottom: 120px;
 
+  @media (max-width: 1024px) {
+    margin-bottom: 120px;
+  }
+
   @media (max-width: 768px) {
     margin-bottom: 80px;
   }
