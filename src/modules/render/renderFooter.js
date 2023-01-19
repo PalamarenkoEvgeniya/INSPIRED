@@ -33,13 +33,33 @@ const createFooterCategory = () => {
           href: `#/${key}`
         })
       })
+    });
+
+    createElement('ul', {
+      className: 'footer-category__sublist'
+    }, {
+      parent: footerCategoryItem,
+      appends: DATA.navigation[key].list.map(item =>
+        createElement('li', {
+          className: 'footer__subitem',
+        }, {
+          append: createElement('a', {
+            className: 'footer__link',
+            textContent: item.title,
+            href: `#/${key}/${item.slug}`
+          })
+        })
+      )
     })
-  }
+    console.log('footerCategoryItem,: ', footerCategoryItem,);
+  };
+
   return footerCategory;
 }
 
 export const renderFooter = () => {
   const footer = document.querySelector('.footer');
+  footer.textContent = '';
 
   const container = createElement('div', {
     className: 'container footer__container'
@@ -95,67 +115,4 @@ export const renderFooter = () => {
     </div>
   `
   )
-
-
-   /* `
-            <li class="footer-category__item">
-              <h3 class="footer-category__subtitle">
-                <a href="#" class="footer__link">Женщины</a>
-              </h3>
-
-              <ul class="footer-category__sublist">
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Бюстгальтеры</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Трусы</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Носки</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Халаты</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Термобелье</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Пижамы</a>
-                </li>
-
-              </ul>
-            </li>
-            <li class="footer-category__item">
-              <h3 class="footer-category__subtitle">
-                <a href="#" class="footer__link">Мужчины</a>
-              </h3>
-
-              <ul class="footer-category__sublist">
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Трусы</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Носки</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Халаты</a>
-                </li>
-
-                <li class="footer-category__subitem">
-                  <a href="#" class="footer__link">Термобелье</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-`*/
 }
