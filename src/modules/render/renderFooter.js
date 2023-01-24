@@ -51,7 +51,6 @@ const createFooterCategory = () => {
         })
       )
     })
-    console.log('footerCategoryItem,: ', footerCategoryItem,);
   };
 
   return footerCategory;

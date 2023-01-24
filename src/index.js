@@ -35,6 +35,15 @@ const init = async () => {
     router.on('men', () => {
       menMainPage();
     })
+
+    router.on('/:gender/:category', (routerData) => {
+      const {gender, category} = routerData.data;
+      console.log(gender, category);
+    })
+    
+    router.on('search', (data) => {
+      console.log(data.params.value)
+    })
   }
   catch (e) {
     createElement('h2', {
