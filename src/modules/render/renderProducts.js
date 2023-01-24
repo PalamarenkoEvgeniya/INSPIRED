@@ -7,7 +7,9 @@ export const renderProducts = async (title, params) => {
   const products = document.querySelector('.goods');
   products.textContent = '';
 
-  const goods = await getData(`${API_URL}/api/goods`, params);
+  const data = await getData(`${API_URL}/api/goods`, params);
+
+  const goods = Array.isArray(data) ? data : data.goods;
 
   const container = createElement('div', {
     className: 'container'
@@ -47,7 +49,7 @@ export const renderProducts = async (title, params) => {
       parent: li
     })
 
-    const colors = createElement('ul', {
+    createElement('ul', {
       className: 'product__color-list'
     }, {
       parent: article,
@@ -59,31 +61,21 @@ export const renderProducts = async (title, params) => {
         })
       })
     })
-
-
-
     return li;
   })
 
-  const list = createElement('ul', {
+  createElement('ul', {
     className: 'goods__list',
   }, {
     appends: listCard,
     parent: container
   })
 
-
-
-  // <ul class="product__color-list">
-  //   <li class="product__color-item">
-  //     <div class="color color_red color_check"></div>
-  //   </li>
-  //   <li class="product__color-item">
-  //     <div class="color color_white"></div>
-  //   </li>
-  //   <li class="product__color-item">
-  //     <div class="color color_black"></div>
-  //   </li>
-  // </ul>
-
+  if(data.pages && data.pages > 1) {
+    const pagination = createElement('div', {
+      className: 'goods__pagination pagination'
+    }, {
+      parent: container
+    })
+  }
 }
