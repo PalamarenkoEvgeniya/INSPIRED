@@ -45,7 +45,6 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
     createElement('a', {
       className: `pagination__arrow pagination__arrow_start ${!isNotStart ? 'pagination__arrow_disabled' : ''}`,
       href: `${router.getCurrentLocation().url}?page=${1}`,
-      textContent: 'start',
       ariaLabel: 'Перейти в начало'
     }, {
       parent: wrapperPagination

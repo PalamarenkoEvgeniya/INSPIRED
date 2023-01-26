@@ -1,0 +1,52 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  padding-top: 40px;
+
+  &__list {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__item {
+    font-size: 14px;
+    line-height: 17px;
+    color: $gray;
+  }
+
+  &__link {
+    padding: 3px;
+    &:hover,
+    &:focus {
+      color: #000000;
+    }
+    &_active {
+      color: #000000;
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  &__arrow {
+    width: 24px;
+    height: 24px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #000000;
+    &_start {
+      order: -1;
+      mask-image: url('../img/arrow-start.svg');
+    }
+
+    &_end {
+      mask-image: url('../img/arrow-end.svg');
+    }
+
+    &_disabled {
+      pointer-events: none;
+      background-color: $gray;
+    }
+  }
+}
