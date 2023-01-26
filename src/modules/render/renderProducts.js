@@ -1,7 +1,8 @@
 
-import { API_URL, DATA } from '../const';
+import { API_URL, COUNT_PAGINATION, DATA } from '../const';
 import { createElement } from '../createElement';
 import { getData } from '../getData';
+import { renderPagination } from './renderPagination';
 
 export const renderProducts = async (title, params) => {
   const products = document.querySelector('.goods');
@@ -77,5 +78,7 @@ export const renderProducts = async (title, params) => {
     }, {
       parent: container
     })
+
+    renderPagination(pagination, data.page, data.pages, COUNT_PAGINATION);
   }
 }
