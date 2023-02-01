@@ -40,7 +40,7 @@ export const renderProducts = async (title, params) => {
 
         <div class="product__row">
           <p class="product__price">руб ${product.price}</p>
-          <button class="product__btn-favorite" 
+          <button class="product__btn-favorite favorite" 
           aria-label="добавить в избранное"
           data-id= ${product.id}>
           </button>
@@ -72,7 +72,7 @@ export const renderProducts = async (title, params) => {
     parent: container
   })
 
-  if(data.pages && data.pages > 1) {
+  if (data.pages && data.pages > 1) {
     const pagination = createElement('div', {
       className: 'goods__pagination pagination'
     }, {
