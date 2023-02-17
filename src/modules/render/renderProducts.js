@@ -1,6 +1,6 @@
 
 import { API_URL, COUNT_PAGINATION, DATA } from '../const';
-import { createElement } from '../createElement';
+import { createElement } from '../utils/createElement';
 import { getData } from '../getData';
 import { renderPagination } from './renderPagination';
 
