@@ -1,6 +1,7 @@
 import { createElement } from '../utils/createElement';
 import logo from '../../img/logo.svg';
 import { search, searchToggle } from './renderSearch';
+import { header } from '../const';
 
 export const searchButton = createElement('button', {
   className: 'header__link',
@@ -33,7 +34,7 @@ export const cartLink = createElement('a', {
         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   `,
-  href: 'cart',
+  href: '#cart',
 })
 
 export const favoriteLink = createElement('a', {
@@ -45,7 +46,7 @@ export const favoriteLink = createElement('a', {
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
   `,
-  href: 'favorite',
+  href: '#favorite',
 });
 
 const container = createElement('div', {
@@ -90,7 +91,6 @@ createElement('ul', {
 })
 
 export const renderHeader = () => {
-  const header = document.querySelector('.header');
   header.append(container);
   header.after(search);
 }

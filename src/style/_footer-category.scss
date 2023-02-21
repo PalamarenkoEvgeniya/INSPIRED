@@ -19,7 +19,8 @@
       gap: 30px;
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 768px) {
+      flex-direction: column;
       gap: 7px;
     }
   }

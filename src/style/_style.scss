@@ -52,7 +52,7 @@ figure {
   margin: 0;
 }
 
-fieldset {  
+fieldset {
   padding: 0;
   margin: 0;
   border: none;
@@ -63,11 +63,12 @@ fieldset {
   transform: scale(0);
 }
 
-.input-hide {  
+.input-hide {
   appearance: none;
 }
 
 .main {
+  flex-grow: 1;
   margin-bottom: 120px;
 
   @media (max-width: 1024px) {
